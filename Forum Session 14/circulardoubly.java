@@ -11,7 +11,6 @@ class Node {
 class CircularDoublyLinkedList {
    Node head;
 
-   // Insert di akhir
    public void insertAtTail(int data) {
       Node newNode = new Node(data);
       if (head == null) {
@@ -27,41 +26,6 @@ class CircularDoublyLinkedList {
       }
    }
 
-   // Insert di awal
-   public void insertAtHead(int data) {
-      insertAtTail(data);
-      head = head.prev;
-   }
-
-   // Delete di awal
-   public void deleteAtHead() {
-      if (head == null)
-         return;
-      if (head.next == head) {
-         head = null;
-      } else {
-         Node tail = head.prev;
-         head = head.next;
-         head.prev = tail;
-         tail.next = head;
-      }
-   }
-
-   // Delete di akhir
-   public void deleteAtTail() {
-      if (head == null)
-         return;
-      if (head.next == head) {
-         head = null;
-      } else {
-         Node tail = head.prev;
-         Node newTail = tail.prev;
-         newTail.next = head;
-         head.prev = newTail;
-      }
-   }
-
-   // Tampilkan maju
    public void displayForward() {
       if (head == null) {
          System.out.println("List kosong");
@@ -75,7 +39,6 @@ class CircularDoublyLinkedList {
       System.out.println("(kembali ke head)");
    }
 
-   // Tampilkan mundur
    public void displayBackward() {
       if (head == null) {
          System.out.println("List kosong");
@@ -98,10 +61,10 @@ public class circulardoubly {
       cdll.insertAtTail(20);
       cdll.insertAtTail(30);
 
-      System.out.println("Display Forward:");
+      System.out.println("Forward:");
       cdll.displayForward();
 
-      System.out.println("Display Backward:");
+      System.out.println("\nBackward:");
       cdll.displayBackward();
    }
 }
