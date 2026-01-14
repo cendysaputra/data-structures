@@ -2,7 +2,6 @@ class CircularQueue {
    private int arr[];
    private int front, rear, size, capacity;
 
-   // Constructor untuk inisialisasi Circular Queue
    CircularQueue(int capacity) {
       this.capacity = capacity;
       arr = new int[capacity];
@@ -10,17 +9,14 @@ class CircularQueue {
       rear = capacity - 1;
    }
 
-   // Mengecek apakah queue penuh
    boolean isFull() {
       return size == capacity;
    }
 
-   // Mengecek apakah queue kosong
    boolean isEmpty() {
       return size == 0;
    }
 
-   // Menambahkan elemen ke queue
    void enqueue(int data) {
       if (isFull()) {
          System.out.println("Queue Penuh");
@@ -31,7 +27,6 @@ class CircularQueue {
       size++;
    }
 
-   // Menghapus elemen dari queue
    int dequeue() {
       if (isEmpty()) {
          System.out.println("Queue Kosong");
@@ -43,7 +38,6 @@ class CircularQueue {
       return data;
    }
 
-   // Menampilkan isi queue
    void display() {
       if (isEmpty()) {
          System.out.println("Queue Kosong");
